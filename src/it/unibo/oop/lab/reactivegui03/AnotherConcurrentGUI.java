@@ -43,8 +43,7 @@ public class AnotherConcurrentGUI {
         final Agent agent = new Agent();
         new Thread(agent).start();
         
-        final TenSecondsCounter tenSecondsCounter = new TenSecondsCounter(agent);
-        new Thread(tenSecondsCounter).start();
+        new Thread(new TenSecondsCounter(agent)).start();
         
         this.up.addActionListener(new ActionListener() {  
             @Override
